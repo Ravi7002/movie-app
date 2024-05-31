@@ -5,9 +5,7 @@ import Screen from './src/screens/Screen';
 const App = () => {
   return (
       <SafeAreaProvider>
-
            <Screen/>
-
       </SafeAreaProvider> 
   )
 }
