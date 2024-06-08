@@ -4,7 +4,7 @@ import Screen from './src/screens/Screen';
 import MainNavigator from './MainNavigator';
 
 const App = () => {
-  return <MainNavigator></MainNavigator>;
+  return <MainNavigator />;
 };
 
 export default App;
