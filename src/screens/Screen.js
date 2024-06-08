@@ -1,36 +1,33 @@
 import React from 'react';
-import { View, Text, StyleSheet, FlatList, Image } from 'react-native';
-import { movieData } from '../data/MovieData';
+import {View, Text, StyleSheet, FlatList, Image} from 'react-native';
+import {movieData} from '../data/MovieData';
+import {ButtonComponent} from '../components/ButtonComponent';
 
 const HomeScreen = () => {
-  console.log("halo")
-    return (
-        <View style={styles.mainContainer}>
-            <FlatList
-                data={movieData}
-                keyExtractor={(item) => item.id}
-                contentContainerStyle={styles.flatListContainer}
-                renderItem={({ item }) => {
-                    return (
-                        <View style={styles.dataContainer}>
-                            <Image
-                                style={styles.movieImage}
-                                source={{ uri: item.imageLink }}
-
-                            />
-                            <View style={styles.movieDescriptionContainer}>
-                                <Text style={styles.title}>{item.title}</Text>
-                                <View style={styles.yearContainer}>
-                                    <Text>{item.year}</Text>
-                                </View>
-                                <Text>{item.rating}</Text>
-                            </View>
-                        </View>
-                    )
-                }}
-            />
-        </View>
-    )
+  console.log('halo');
+  return (
+    <View style={styles.mainContainer}>
+      <FlatList
+        data={movieData}
+        keyExtractor={item => item.id}
+        contentContainerStyle={styles.flatListContainer}
+        renderItem={({item}) => {
+          return (
+            <View style={styles.dataContainer}>
+              <Image style={styles.movieImage} source={{uri: item.imageLink}} />
+              <View style={styles.movieDescriptionContainer}>
+                <Text style={styles.title}>{item.title}</Text>
+                <View style={styles.yearContainer}>
+                  <Text>{item.year}</Text>
+                </View>
+                <Text>{item.rating}</Text>
+              </View>
+            </View>
+          );
+        }}
+      />
+    </View>
+  );
 };
 const styles = StyleSheet.create({
   mainContainer: {
@@ -51,7 +48,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     padding: 10,
     flexDirection: 'row',
-    alignItems: "center"
+    alignItems: 'center',
   },
   title: {
     fontSize: 18,
@@ -60,15 +57,15 @@ const styles = StyleSheet.create({
   year: {
     margin: 3,
   },
-  movieDescriptionContainer:{
+  movieDescriptionContainer: {
     flex: 1,
     justifyContent: 'center',
     marginLeft: 8,
   },
-  yearContainer:{
+  yearContainer: {
     marginTop: 8,
     marginBottom: 8,
-  }
+  },
 });
 
 export default HomeScreen;
