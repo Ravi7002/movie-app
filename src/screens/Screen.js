@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text, StyleSheet, FlatList, Image} from 'react-native';
 import {movieData} from '../data/MovieData';
-import {ButtonComponent} from '../components/ButtonComponent';
+import {ButtonComponent} from '../../components/ButtonComponents';
 
 const HomeScreen = () => {
   console.log('halo');
@@ -21,6 +21,11 @@ const HomeScreen = () => {
                   <Text>{item.year}</Text>
                 </View>
                 <Text>{item.rating}</Text>
+              </View>
+              <View>
+                <ButtonComponent
+                  onPress={() => navigation.navigate('DetailMovie')}
+                />
               </View>
             </View>
           );
